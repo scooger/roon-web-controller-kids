@@ -336,7 +336,9 @@ io.on("connection", function(socket) {
 app.get("/", function(req, res) {
   res.sendFile(__dirname + "/public/fullscreen.html");
 });
-
+app.get("/kids", function(req, res) {
+  res.sendFile(__dirname + "/public/kids_sidexside.html");
+});
 app.get("/roonapi/getImage", function(req, res) {
   core.services.RoonApiImage.get_image(
     req.query.image_key,

@@ -8,7 +8,9 @@ $(document).ready(function() {
     var pairEnabled = payload.pairEnabled;
 
     if (pairEnabled === true) {
-      showSection("nowPlaying");
+      //Default Load panel!
+      //showSection("nowPlaying");
+      showSection("kidsBrowser");
     } else {
       showSection("pairDisabled");
     }
@@ -24,14 +26,27 @@ function showSection(sectionName) {
       // Hide inactive sections
       $("#pairDisabled").hide();
       $("#libraryBrowser").hide();
+      $("#kidsBrowser").hide();
       $("#overlayMainMenu").hide();
       break;
+    case "kidsBrowser":
+        $("#buttonMenu").show();
+        // Show libraryBrowser
+        $("#kidsBrowser").show();
+        
+        // Hide inactive sections
+        $("#libraryBrowser").hide();
+        $("#pairDisabled").hide();
+        $("#nowPlaying").hide();
+        $("#overlayMainMenu").hide();
+        break;
     case "libraryBrowser":
       $("#buttonMenu").show();
       // Show libraryBrowser
       $("#libraryBrowser").show();
       // Hide inactive sections
       $("#pairDisabled").hide();
+      $("#kidsBrowser").hide();
       $("#nowPlaying").hide();
       $("#overlayMainMenu").hide();
       break;
@@ -41,6 +56,7 @@ function showSection(sectionName) {
       // Hide everthing else
       $("#buttonMenu").hide();
       $("#libraryBrowser").hide();
+      $("#kidsBrowser").hide();
       $("#nowPlaying").hide();
       $("#pageLoading").hide();
       break;

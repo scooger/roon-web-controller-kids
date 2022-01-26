@@ -78,6 +78,11 @@
       <iframe class="section" src="library.html"></iframe>
     </div>
 
+    <div id="kidsBrowser" class="fullscreenFlex">
+      Kids mode is under development!
+      <iframe class="section" src="kids.html"></iframe>
+    </div>
+
     <div id="pairDisabled" class="fullscreenFlex">
       <div class="messages">
         This extension is not enabled. Please use a Roon client to enable it.
@@ -108,6 +113,15 @@
             aria-label="Show library browser"
           >
             Library
+          </button>
+          <button
+            type="button"
+            class="buttonOverlay"
+            onclick="showSection('kidsBrowser')"
+            name="Show kids browser"
+            aria-label="Show kids browser"
+          >
+            Kids
           </button>
         </div>
       </div>
